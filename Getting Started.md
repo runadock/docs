@@ -1,11 +1,14 @@
-## Getting Started with RunADock
+Getting Started with RunADock
+=============================
 
 RunADock can be used to start and run docker containers. In the following you will find an example on how to use our RunADock terminal.
 If you are interessted in Docker itself, please visit <https://www.docker.com>
 
 Note: We provide our service to open source developers and administrators. So appropriate technical knowledge is required to use it.
 
-#### Example: The little web server
+Example: The little web server
+------------------------------
+
 In our example we will run a small web server including a web site. The web server is based on NGINX. The docker file can be viewed in <https://github.com/dockerfile/nginx>
 
 There you will find the docker file with the description of the container build.
@@ -35,7 +38,8 @@ Now start with the following steps:
 
 If you have copied correctly you can see the site "Welcome to nginx on Debian!".
 
-#### out of charge
+out of charge
+-------------
 
 In case your quota is exhausted you can order new contingents on our Billing page. Just open the site using the menu item. At Billing site you can choose between 5, 10, 25, or 50 Euro. After clicking on "Charge" the Novalnet application will be started. Please follow the provided process.
 
