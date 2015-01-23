@@ -1,5 +1,5 @@
 site_name: RunADock-Docs
-site_url: https://runadock-docs.readthedocs.org/en/latest/
+site_url: https://runadock.readthedocs.org/en/latest/
 repo_url: https://github.com/runadock/docs
 pages:
 - ['Introduction.md', 'Introduction']
