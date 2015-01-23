@@ -3,3 +3,4 @@ site_url: runadock.readthedocs.org
 repo_url: https://github.com/runadock/docs/
 pages:
 - ['Introduction.md', 'Introduction']
+- ['GettingStarted.md', 'User Guide']
