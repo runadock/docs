@@ -1,6 +1,0 @@
-site_name: docs
-pages:
-        - [Introduction.md, Introduction]
-        - [Getting Started.md, Getting Started]
-        - [Developers Guide.md, Developers Guide]
-#theme: readthedocs
