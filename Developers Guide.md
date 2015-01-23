@@ -6,7 +6,8 @@ You need an authorization key to run docker containers using our RunADock interf
 
 ### Using CLI
 We provide you a CLI for using our RunADock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
-  - download and unzip the CLI of your need from our mainpage https://runadock.io
+
+  - download and unzip the CLI of your need from our mainpage <https://runadock.io>
   - copy the CLI from our github project using the git clone command with the address https://github.com/runadock/runadock-cli
 
 #### 
