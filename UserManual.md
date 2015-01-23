@@ -7,7 +7,6 @@
 * [Features](#features)
 * [Q & A](#q-amp-a)
 * [Getting started](#getting-started)
-* [Developers Guide](#developers-guide)
 * [Release Notes](#release-notes)
 
 ---
@@ -71,26 +70,6 @@ You can also use our terminal to start and stop your containers:
 ![dashboard](https://extern.x-cellent.com/git/uploads/runadock/runadock/fdb1305f2a/dashboard.png)
 
 Below the dashboard you will find a list of all your running containers. The details view shows you all necessary information about the selected container. The Trash button terminates your container.
-
----
-## Developers Guide
-
-### cli
-git clone
-
-create cli application with ./build
-
-set environment variables RUNADOCK_USER and RUNADOCK_TOKEN
-
-start container using bin/runadock run --source <source to the container> --name <name of your container> 
-
-further optional parameter: --size, --plan
-
-stop/delete container using bin/runadock kill --container <ID of the container to be stopped>
-
-show details of a container: bin/runadock inspect --container <ID of the container to be inspected>
-
-list your containers: bin/runadock ps --detail --all
 
 ---
 ## Release Notes
