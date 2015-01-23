@@ -1,0 +1,6 @@
+site_name: Runadock-Docs
+pages:
+        - [Introduction.md, Introduction]
+        - [Getting Started.md, Getting Started]
+        - [Developers Guide.md, Developers Guide]
+#theme: readthedocs
