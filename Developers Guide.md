@@ -126,11 +126,12 @@ Last but not least we also provide a command to list all your running and stoppe
 and you will get the following output:
 
     ContainerID  SOURCE                                                       CREATED              STATUS   DNS                       PORTS           NAME
-    9f3087c1ec4  nginx                                                        2015-01-23 14:18:52  RUNNING  9f3087c1ec.c.runadock.io  443->49915/tcp  
-    e9161e7a743  https://github.com/dockerfile/nginx                          2015-01-23 10:54:09  RUNNING  e9161e7a74.c.runadock.io  443->49907/tcp  testtest
-    248d3615301  nginx                                                        2015-01-23 14:30:03  RUNNING  248d361530.c.runadock.io  443->49917/tcp  
-    4bb03cd80d8  https://github.com/runadock/dockerfiles/tree/master/itworks  2015-01-14 12:36:04  RUNNING  4bb03cd80d.c.runadock.io  443->49886/tcp  Torn1
+    9f3087c1ec4  nginx                                                        2015-01-23 14:18:52  RUNNING  9f3087c1ec.c.runadock.io  443->49915/tcp
 
+There are the following command options available for the ps command:
+
+--detail, -d        show long container ids
+--all, -a           show even terminated container's
 
 
 
