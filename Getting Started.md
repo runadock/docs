@@ -1,7 +1,7 @@
 ## Getting Started with RunADock
 
 RunADock can be used to start and run docker containers. In the following you will find an example on how to use our RunADock terminal.
-If you are interessted in Docker itself, please visit (https://www.docker.com)
+If you are interessted in Docker itself, please visit [https://www.docker.com] (https://www.docker.com)
 
 Note: We provide our service to open source developers and administrators. So appropriate technical knowledge is required to use it.
 
