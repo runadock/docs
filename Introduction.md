@@ -1,13 +1,18 @@
-## Introduction
-### About RunADock
+Introduction
+============
+
+About RunADock
+--------------
+
 RunADock is implemented as a PaaS for Developers to run and test applications in an easy way. We strongly focus on
 * performance and 
 * usability.
 
 For more information about Docker look at https://www.docker.com/whatisdocker/
 
----
-### Features
+Features
+--------
+
 * dedicated IPv4 address
 * use of GitHub repository to start a container and to run application
 * cli (command line interface)
