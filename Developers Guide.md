@@ -10,7 +10,6 @@ We provide you a CLI for using our RunADock. You can find a CLI for Windows, Mac
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
   - copy the CLI from our github project using the git clone command with the address https://github.com/runadock/runadock-cli
 
-#### 
 To use the CLI you have to build the application first. Go into the directory where you have unzipped the CLI source and start the build with the command
 
     $ ./build
@@ -21,6 +20,8 @@ Next you have to set the environment variables
 and 
 
     RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
+
+#### run
 
 Now you are ready to start a container with the following command:
 
@@ -36,6 +37,8 @@ The return value is the id of your run created by RunADock. There are the follow
     --name      arbitrary name of the container
     --size      size of the container with the possible arguments XS (default), S, M, L
     --plan      plan for the container with the possible arguments STARTER (default), DEDICATED
+
+#### inspect
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -110,14 +113,18 @@ Example:
 
 As you can see there are two id parameter. The first parameter *id* is the RunADock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
+#### kill
+
 For stopping a container you can use the kill command:
 
     $ ./runadock kill --id <id of the container to kill>
 
 Example:
 
-    $ ./runadock kill --id 
+    $ ./runadock kill --id 9d608bc6-e066-4686-ae98-b3e6ef3114fd
     $
+
+#### ps
 
 Last but not least we also provide a command to list all your running and stopped containers. Use
 
