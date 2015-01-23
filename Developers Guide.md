@@ -17,10 +17,10 @@ To use the CLI you have to build the application first. Go into the directory wh
 
 Next you have to set the environment variables 
 
-    RUNADOCK_USER <your username of RunADock>
+    RUNADOCK_USER=<your username of RunADock>
 and 
 
-    RUNADOCK_TOKEN <your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
+    RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
 
 Now you are ready to start a container with the following command:
 
@@ -31,7 +31,11 @@ Example:
     $ ./runadock run --source nginx
     $ created: 7e08492e-5db9-489d-9652-90f133df8bea
 
-The return value is the id of your run created by RunADock. 
+The return value is the id of your run created by RunADock. There are the following optional parameter available for the run command:
+
+--name      arbitrary name of the container
+--size      size of the container with the possible arguments XS (default), S, M, L
+--plan      plan for the container with the possible arguments STARTER (default), DEDICATED
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -104,22 +108,31 @@ Example:
       "buildLog": ""
     }
 
+As you can see there are two id parameter. The first parameter *id* is the RunADock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
-git clone
+For stopping a container you can use the kill command:
 
-create cli application with ./build
+    $ ./runadock kill --id <id of the container to kill>
 
-set environment variables RUNADOCK_USER and RUNADOCK_TOKEN
+Example:
 
-start container using bin/runadock run --source <source to the container> --name <name of your container> 
+    $ ./runadock kill --id 
+    $
 
-further optional parameter: --size, --plan
+Last but not least we also provide a command to list all your running and stopped containers. Use
 
-stop/delete container using bin/runadock kill --container <ID of the container to be stopped>
+    $ ./runadock ps
 
-show details of a container: bin/runadock inspect --container <ID of the container to be inspected>
+and you will get the following output:
 
-list your containers: bin/runadock ps --detail --all
+    ContainerID  SOURCE                                                       CREATED              STATUS   DNS                       PORTS           NAME
+    9f3087c1ec4  nginx                                                        2015-01-23 14:18:52  RUNNING  9f3087c1ec.c.runadock.io  443->49915/tcp  
+    e9161e7a743  https://github.com/dockerfile/nginx                          2015-01-23 10:54:09  RUNNING  e9161e7a74.c.runadock.io  443->49907/tcp  testtest
+    248d3615301  nginx                                                        2015-01-23 14:30:03  RUNNING  248d361530.c.runadock.io  443->49917/tcp  
+    4bb03cd80d8  https://github.com/runadock/dockerfiles/tree/master/itworks  2015-01-14 12:36:04  RUNNING  4bb03cd80d.c.runadock.io  443->49886/tcp  Torn1
+
+
+
 
 ### Java
 
