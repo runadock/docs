@@ -27,9 +27,17 @@ Now start with the following steps:
 * now click the button Create
 
 6. After refreshing the terminal site the list of running containers contains now the recently started container.
-7. TO open the web site of the container you have to use the entries Public DNS and Ports in the following way:
+7. To open the web site of the container you have to use the entries Public DNS and Ports in the following way:
 
-<public dns>:<ports>, in example: e9161e7a74.c.runadock.io:49908
+    [public dns]:[ports], in example: e9161e7a74.c.runadock.io:49908
+
+Please consider: for our example you have to use the entry for port 80.
 
 If you have copied correctly you can see the site "Welcome to nginx on Debian!".
+
+#### out of charge
+
+In case your quota is exhausted you can order new contingents on our Billing page. Just open the site using the menu item. At Billing site you can choose between 5, 10, 25, or 50 Euro. After clicking on "Charge" the Novalnet application will be started. Please follow the provided process.
+
+Usually you will get a confirmation about your successful charge. Further you can see your actual balance at the Billing site.
 
