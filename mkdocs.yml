@@ -1,5 +1,5 @@
 site_name: RunADock-Docs
 pages:
 - ['Introduction.md', 'Introduction']
-- ['Getting Started.md', 'Getting Started']
-- ['Developers Guide.md', 'Developers Guide']
+- ['GettingStarted.md', 'Getting Started']
+- ['DevelopersGuide.md', 'Developers Guide']
