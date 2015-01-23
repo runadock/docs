@@ -1,10 +1,16 @@
-### Sign in
+Sign in
+-------
+
 To sign in into RunADock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that RunADock is allowed to use your GitHub account information. After your confirmation you will be redirected back to RunADock and we will create your RunADock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service including the 120 minutes free of charge.
 
-### Authorization key
+Authorization key
+-----------------
+
 You need an authorization key to run docker containers using our RunADock interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
 
-### Using CLI
+Using CLI
+---------
+
 We provide you a CLI for using our RunADock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
 
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
@@ -21,7 +27,7 @@ and
 
     RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
 
-#### run
+### run
 
 Now you are ready to start a container with the following command:
 
@@ -38,7 +44,7 @@ The return value is the id of your run created by RunADock. There are the follow
     --size      size of the container with the possible arguments XS (default), S, M, L
     --plan      plan for the container with the possible arguments STARTER (default), DEDICATED
 
-#### inspect
+### inspect
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -113,7 +119,7 @@ Example:
 
 As you can see there are two id parameter. The first parameter *id* is the RunADock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
-#### kill
+### kill
 
 For stopping a container you can use the kill command:
 
@@ -124,7 +130,7 @@ Example:
     $ ./runadock kill --id 9d608bc6-e066-4686-ae98-b3e6ef3114fd
     $
 
-#### ps
+### ps
 
 Last but not least we also provide a command to list all your running and stopped containers. Use
 
@@ -142,7 +148,8 @@ There are the following command options available for the ps command:
 
 
 
-### Java
+Java
+----
 
-
-### curl
+curl
+----
