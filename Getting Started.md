@@ -15,16 +15,16 @@ Now start with the following steps:
 1. Open RunADock: https://runadock.io
 2. Log in with the following credentials:
 
-* user name: runadock-guest1
-* password: use the password you have received via email
+    * user name: runadock-guest1
+    * password: use the password you have received via email
 
 3. After successful log-in you will be guided to our Welcome site. Please check that you have already accepted our terms.
 4. Now you can start our RunADock terminal. Open the Containers site using the button "Create a container".
 5. To start a container you have to fill out the form:
 
-* source: https://github.com/dockerfile/nginx
-* name: myfirstcontainer
-* now click the button Create
+    * source: https://github.com/dockerfile/nginx
+    * name: myfirstcontainer
+    * now click the button Create
 
 6. After refreshing the terminal site the list of running containers contains now the recently started container.
 7. To open the web site of the container you have to use the entries Public DNS and Ports in the following way:
