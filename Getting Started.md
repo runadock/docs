@@ -1,4 +1,4 @@
-## Getting-In RunADock
+## Getting Started with RunADock
 
 RunADock can be used to start and run docker containers. In the following you will find an example on how to use our RunADock terminal.
 If you are interessted in Docker itself, please visit https://www.docker.com
@@ -31,9 +31,9 @@ Now start with the following steps:
 
     [public dns]:[ports], in example: e9161e7a74.c.runadock.io:49908
 
-Please consider: for our example you have to use the entry for port 80.
+   Please consider: for our example you have to use the entry for port 80.
 
-If you have copied correctly you can see the site "Welcome to nginx on Debian!".
+   If you have copied correctly you can see the site "Welcome to nginx on Debian!".
 
 #### out of charge
 
