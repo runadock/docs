@@ -1,6 +1,5 @@
 site_name: RunADock
 site_url: runadock.readthedocs.org
 repo_url: https://github.com/runadock/docs/
-docs_dir: 'docs'
 pages:
 - ['Introduction.md', 'Introduction']
