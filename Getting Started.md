@@ -1,18 +1,18 @@
 ## Getting Started with RunADock
 
 RunADock can be used to start and run docker containers. In the following you will find an example on how to use our RunADock terminal.
-If you are interessted in Docker itself, please visit [https://www.docker.com] (https://www.docker.com)
+If you are interessted in Docker itself, please visit https://www.docker.com
 
 Note: We provide our service to open source developers and administrators. So appropriate technical knowledge is required to use it.
 
 #### Example: The little web server
-In our example we will run a small web server including a web site. The web server is based on NGINX. The docker file can be viewed in (https://github.com/dockerfile/nginx)
+In our example we will run a small web server including a web site. The web server is based on NGINX. The docker file can be viewed in https://github.com/dockerfile/nginx
 
 There you will find the docker file with the description of the container build.
 
 Now start with the following steps:
 
-1. Open RunADock: (https://runadock.io)
+1. Open RunADock: https://runadock.io
 2. Log in with the following credentials:
 
     * user name: runadock-guest1
