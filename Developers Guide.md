@@ -130,8 +130,8 @@ and you will get the following output:
 
 There are the following command options available for the ps command:
 
-  --detail, -d        show long container ids
-  --all, -a           show even terminated container's
+    --detail, -d        show long container ids
+    --all, -a           show even terminated container's
 
 
 
