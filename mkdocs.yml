@@ -1,4 +1,4 @@
-site_name: Runadock-Docs
+site_name: docs
 pages:
         - [Introduction.md, Introduction]
         - [Getting Started.md, Getting Started]
