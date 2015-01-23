@@ -33,7 +33,7 @@ Now start with the following steps:
 
    Please consider: for our example you have to use the entry for port 80.
 
-   If you have copied correctly you can see the site "Welcome to nginx on Debian!".
+If you have copied correctly you can see the site "Welcome to nginx on Debian!".
 
 #### out of charge
 
