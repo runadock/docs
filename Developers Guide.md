@@ -33,9 +33,9 @@ Example:
 
 The return value is the id of your run created by RunADock. There are the following optional parameter available for the run command:
 
---name      arbitrary name of the container
---size      size of the container with the possible arguments XS (default), S, M, L
---plan      plan for the container with the possible arguments STARTER (default), DEDICATED
+  --name      arbitrary name of the container
+  --size      size of the container with the possible arguments XS (default), S, M, L
+  --plan      plan for the container with the possible arguments STARTER (default), DEDICATED
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -130,8 +130,8 @@ and you will get the following output:
 
 There are the following command options available for the ps command:
 
---detail, -d        show long container ids
---all, -a           show even terminated container's
+  --detail, -d        show long container ids
+  --all, -a           show even terminated container's
 
 
 
