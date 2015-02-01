@@ -1,6 +1,6 @@
 site_name: RunADock
 pages:
-- [docs/Introduction.md, Introduction]
-- [docs/GettingStarted.md, Getting Started]
-- [docs/DevelopersGuide.md, Developers Guide]
+- [Introduction.md, Introduction]
+- [GettingStarted.md, Getting Started]
+- [DevelopersGuide.md, Developers Guide]
 theme: readthedocs
