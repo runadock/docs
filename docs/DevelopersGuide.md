@@ -1,4 +1,5 @@
-# Developers Guide
+Developers Guide
+================
 
 Sign in
 -------
