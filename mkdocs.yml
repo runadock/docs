@@ -1,3 +1,5 @@
 site_name: RunADock
-site_url: runadock.readthedocs.org
-repo_url: https://github.com/runadock/docs/
+pages:
+- [Introduction.md, Intro]
+- [GettingStarted.md, Getting Started]
+- [DevelopersGuide.md, Developers Guide]
