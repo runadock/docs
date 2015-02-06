@@ -162,10 +162,10 @@ The following example shows you how to start a container:
 
 		import com.runadock.*;
 		public class Example {
-      public static void main(final String[] args) {
-        Runadock runadock = RunadockFactory.connect(
-          "<your username of RunADock>",
-          "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+			public static void main(final String[] args) {
+				Runadock runadock = RunadockFactory.connect(
+					"<your username of RunADock>",
+					"<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
 
         CreateContainerRequest request = new CreateContainerRequest();
         request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
@@ -174,9 +174,19 @@ The following example shows you how to start a container:
       }
     }
 
+Besides the mandatory source parameter there are the following optional parameters provided by the CreateContainerRequest object:
+
+		setCmd(List<String> cmd); - commands which should be executed
+		setEnv(List<String> env); - environment variables to be set
+		setName(String name); - an arbitrary name of the container
+		setPlan(String plan); - plan for the container with the possible arguments STARTER (default), DEDICATED
+		setSize(String size); - size of the container with the possible arguments XS (default), S, M, L
+
+
+
 There is a further createContainer() method where additionally a Callback object as parameter can be provided:
 
-    createContainer(final CreateContainerRequest containerToCreate, Callback callback)
+    createContainer(final CreateContainerRequest containerToCreate, Callback callback);
 
 The Callback object provides two methods you can use to get return information about your running container. Here is an implementation example for the Callback object:
 
