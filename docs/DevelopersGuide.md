@@ -317,10 +317,10 @@ The Container object provides get() methods for the properties of a started cont
       Successfully built 7615793e4928
     ]
 
-curl
+cURL
 ----
 
-Last but not least the curl description. 
+Last but not least the cURL description. 
 
 		API_USER="<your username of runadock>"
 		API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
@@ -379,17 +379,17 @@ There are the following optional parameter available for the container start:
 
 #### Delete a container
 
-To delete a container you can use the following curl command:
+To delete a container you can use the following cURL command:
 
 		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container to be deleted>
 
 #### Description of all containers
 
-To list all containers including the terminated containers use the following curl command:
+To list all containers including the terminated containers use the following cURL command:
 
 		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container?all=true
 
-The parameter "all" is set to false per default. Calling the curl command without  the "all"-parameter you will get the running container only.
+The parameter "all" is set to false per default. Calling the cURL command without the "all"-parameter you will get the running container only.
 
 #### Description of a specific container
 
