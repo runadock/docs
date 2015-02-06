@@ -31,7 +31,7 @@ and
 
     RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
 
-### run
+#### run
 
 Now you are ready to start a container with the following command:
 
@@ -48,7 +48,7 @@ The return value is the id of your run created by runadock. There are the follow
     --size      size of the container with the possible arguments XS (default), S, M, L
     --plan      plan for the container with the possible arguments STARTER (default), DEDICATED
 
-### inspect
+#### inspect
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -123,7 +123,7 @@ Example:
 
 As you can see there are two id parameter. The first parameter *id* is the runadock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
-### kill
+#### kill
 
 For stopping a container you can use the kill command:
 
@@ -134,7 +134,7 @@ Example:
     $ ./runadock kill --id 9d608bc6-e066-4686-ae98-b3e6ef3114fd
     $
 
-### ps
+#### ps
 
 Last but not least we also provide a command to list all your running and stopped containers. Use
 
@@ -157,7 +157,7 @@ Java
 
 To manage containers using Java you first have to get the sources from our github project https://github.com/runadock/runadock-java. Integrate the runadock-java project into your Java project.
 
-### Start a container
+#### Start a container
 
 The following example shows you how to start a container:
 
@@ -272,13 +272,13 @@ The Callback object provides two methods you can use to get return information a
 		}
 
 
-### Terminate
+#### Terminate
 
 To terminate a container you have to call the following method:
 
     runadock.terminateContainer("<the containerID of the container to terminate>");
 
-### List all containers
+#### List all containers
 
 With the method
 
@@ -322,9 +322,27 @@ The Container object provides get() methods for the properties of a started cont
 curl
 ----
 
-Last but not least the curl description.
+Last but not least the curl description. 
 
-start a container:
-set following variables
-API_USER="<your username of runadock>"
-API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
+
+		API_USER="<your username of runadock>"
+		API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
+
+#### Start a container
+
+		curl -X POST -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" -d '{"source":"https://github.com/runadock/dockerfiles/tree/master/itworks"}' https://runadock.io/api/v1/container
+
+#### Delete a container
+
+		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/5585a716-0ed0-4d08-9c3f-03b2e440de0e
+
+#### Description of all containers
+
+		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container?all=true
+
+#### Description of a specific container
+
+		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<runadockID of the container>
+
+
+
