@@ -1,6 +1,6 @@
-site_name: RunADock
+site_name: runadock
 pages:
-- [index.md, RunADock]
+- [index.md, runadock]
 - [Introduction.md, Introduction]
 - [GettingStarted.md, Getting Started]
 - [DevelopersGuide.md, Developers Guide]
