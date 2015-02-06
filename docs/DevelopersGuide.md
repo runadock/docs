@@ -29,7 +29,7 @@ Next you have to set the environment variables
 
 and
 
-    RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
+    RUNADOCK_TOKEN=<your authorization key can be found at https://runadock.io/terminal/#/tokens>
 
 #### run
 
@@ -46,7 +46,6 @@ The return value is the id of your run created by runadock. There are the follow
 
     --name      arbitrary name of the container
     --size      size of the container with the possible arguments XS (default), S, M, L
-    --plan      plan for the container with the possible arguments STARTER (default), DEDICATED
 
 #### inspect
 
@@ -180,7 +179,6 @@ Besides the mandatory source parameter there are the following optional paramete
 		setCmd(List<String> cmd); - commands which should be executed
 		setEnv(List<String> env); - environment variables to be set
 		setName(String name); - an arbitrary name of the container
-		setPlan(String plan); - plan for the container with the possible arguments STARTER (default), DEDICATED
 		setSize(String size); - size of the container with the possible arguments XS (default), S, M, L
 
 There is a further createContainer() method where additionally a Callback object as parameter can be provided:
@@ -324,7 +322,6 @@ curl
 
 Last but not least the curl description. 
 
-
 		API_USER="<your username of runadock>"
 		API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
 
@@ -332,17 +329,70 @@ Last but not least the curl description.
 
 		curl -X POST -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" -d '{"source":"https://github.com/runadock/dockerfiles/tree/master/itworks"}' https://runadock.io/api/v1/container
 
+The answer of the POST request contains the complete description of a container, like the example in the following:
+
+		{"id":"3592f681-07e6-4f8d-a8cc-db068cf1fee5",
+		"containerId":null,
+		"name":"test",
+		"publicDns":null,
+		"ip":null,
+		"source":"https://github.com/runadock/dockerfiles/tree/master/itworks",
+		"state":"ORDERED",
+		"cpuShares":1024,
+		"memory":4096,
+		"diskSize":5,
+		"ordered":1423238547683,
+		"created":null,
+		"terminated":null,
+		"orderedBy":"username",
+		"plan":"Starter",
+		"owner":
+			{"id":"b88de4f9-25e8-491e-a8c9-d62f478300b9",
+			"firstName":"Firstname",
+			"lastName":"Lastname",
+			"street":"am Bay",
+			"zip":"65712",
+			"city":"Taindorf",
+			"country":"Deutschland",
+			"houseNumber":"1",
+			"username":"username",
+			"email":"username@yahoo.com",
+			"verifyToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJydW5hZG9jay1ndWVzdDEiLCJpYXQiOjE0MTg3MzQwODIzMDZ9.oIrjTVoAcku5dchayL7WN7tZxB2gO1uFE2iWVRawtyM=",
+			"countryCode":"DE",
+			"receiveEmail":true,
+			"creditCardVerified":true,
+			"termsAccepted":true,
+			"admin":false,
+			"emailVerified":false},
+		"ports":[],
+		"env":[],
+		"cmd":[],
+		"pricePerMinute":{"amount":3.4E-4,"currency":"EUR"},
+		"pricePerOrder":{"amount":0.05,"currency":"EUR"},
+		"cost":null,
+		"buildLog":""}
+
+There are the following optional parameter available for the container start:
+
+    "name":"<arbitrary name of the container>"
+    "size":"<size of the container with the possible arguments XS (default), S, M, L>"
+
 #### Delete a container
 
-		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/5585a716-0ed0-4d08-9c3f-03b2e440de0e
+To delete a container you can use the following curl command:
+
+		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container to be deleted>
 
 #### Description of all containers
 
+To list all containers including the terminated containers use the following curl command:
+
 		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container?all=true
+
+The parameter "all" is set to false per default. Calling the curl command without  the "all"-parameter you will get the running container only.
 
 #### Description of a specific container
 
-		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<runadockID of the container>
+In case you need the information for one specific container, just append the ID of the container to the URL:
 
-
-
+		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container>
