@@ -4,17 +4,17 @@ Developers Guide
 Sign in
 -------
 
-To sign in into RunADock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that RunADock is allowed to use your GitHub account information. After your confirmation you will be redirected back to RunADock and we will create your RunADock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service including the 120 minutes free of charge.
+To sign in into runadock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock and we will create your runadock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service including the 120 minutes free of charge.
 
 Authorization key
 -----------------
 
-You need an authorization key to run docker containers using our RunADock interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
+You need an authorization key to run docker containers using our runadock interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
 
 CLI
 ---
 
-We provide you a CLI for using our RunADock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
+We provide you a CLI for using our runadock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
 
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
   - copy the CLI from our github project using the git clone command with the address https://github.com/runadock/runadock-cli
@@ -25,8 +25,9 @@ To use the CLI you have to build the application first. Go into the directory wh
 
 Next you have to set the environment variables 
 
-    RUNADOCK_USER=<your username of RunADock>
-and 
+    RUNADOCK_USER=<your username of runadock>
+
+and
 
     RUNADOCK_TOKEN=<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>
 
@@ -41,7 +42,7 @@ Example:
     $ ./runadock run --source https://github.com/runadock/dockerfiles/tree/master/itworks
     $ created: 7e08492e-5db9-489d-9652-90f133df8bea
 
-The return value is the id of your run created by RunADock. There are the following optional parameter available for the run command:
+The return value is the id of your run created by runadock. There are the following optional parameter available for the run command:
 
     --name      arbitrary name of the container
     --size      size of the container with the possible arguments XS (default), S, M, L
@@ -62,7 +63,7 @@ Example:
       "name": "",
       "publicDns": "7da774585c.c.runadock.io",
       "ip": "37.187.250.7",
-      "source": "nginx",
+      "source": "https://github.com/runadock/dockerfiles/tree/master/itworks",
       "state": "RUNNING",
       "cpuShares": 128,
       "memory": 512,
@@ -70,19 +71,19 @@ Example:
       "ordered": 1422016066087,
       "created": 1422016068075,
       "terminated": 0,
-      "orderedBy": "runadock-guest1",
+      "orderedBy": "username",
       "plan": "Starter",
       "owner": {
         "id": "b88de4f9-25e8-491e-a8c9-d62f478300b9",
-        "firstName": "Demoaccount",
-        "lastName": "RunADock",
+        "firstName": "Firstname",
+        "lastName": "Lastname",
         "street": "am Bay",
         "zip": "65712",
         "city": "Taindorf",
         "country": "Deutschland",
         "houseNumber": "1",
-        "username": "runadock-guest1",
-        "email": "runadock_guest1@yahoo.com",
+        "username": "username",
+        "email": "username@yahoo.com",
         "verifyToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJydW5hZG9jay1ndWVzdDEiLCJpYXQiOjE0MTg3MzQwODIzMDZ9.oIrjTVoAcku5dchayL7WN7tZxB2gO1uFE2iWVRawtyM=",
         "countryCode": "DE",
         "receiveEmail": true,
@@ -120,7 +121,7 @@ Example:
       "buildLog": ""
     }
 
-As you can see there are two id parameter. The first parameter *id* is the RunADock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
+As you can see there are two id parameter. The first parameter *id* is the runadock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
 ### kill
 
@@ -141,8 +142,8 @@ Last but not least we also provide a command to list all your running and stoppe
 
 and you will get the following output:
 
-    ContainerID  SOURCE                                                       CREATED              STATUS   DNS                       PORTS           NAME
-    9f3087c1ec4  nginx                                                        2015-01-23 14:18:52  RUNNING  9f3087c1ec.c.runadock.io  443->49915/tcp
+    ContainerID  SOURCE		CREATED              STATUS   DNS                       PORTS           NAME
+    9f3087c1ec4  nginx    2015-01-23 14:18:52  RUNNING  9f3087c1ec.c.runadock.io  443->49915/tcp
 
 There are the following command options available for the ps command:
 
@@ -164,8 +165,8 @@ The following example shows you how to start a container:
 		public class Example {
 			public static void main(final String[] args) {
 				Runadock runadock = RunadockFactory.connect(
-					"<your username of RunADock>",
-					"<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+					"<your username of runadock>",
+					"<your authorization key can be found at https://runadock.io/terminal/#/tokens>");
 
         CreateContainerRequest request = new CreateContainerRequest();
         request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
@@ -182,8 +183,6 @@ Besides the mandatory source parameter there are the following optional paramete
 		setPlan(String plan); - plan for the container with the possible arguments STARTER (default), DEDICATED
 		setSize(String size); - size of the container with the possible arguments XS (default), S, M, L
 
-
-
 There is a further createContainer() method where additionally a Callback object as parameter can be provided:
 
     createContainer(final CreateContainerRequest containerToCreate, Callback callback);
@@ -191,15 +190,15 @@ There is a further createContainer() method where additionally a Callback object
 The Callback object provides two methods you can use to get return information about your running container. Here is an implementation example for the Callback object:
 
     @Test
-    public class RunadockTest {
+    public class Example {
       Runadock runadock;
       private State state;
 		
 			@BeforeTest
 			public void setUp() {
 				this.runadock = RunadockFactory.connect(
-				    "<your username of RunADock>", 
-            "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+				    "<your username of runadock>", 
+            "<your authorization key can be found at https://runadock.io/terminal/#/tokens>");
 			}
 		
 			@Test(enabled = false)
@@ -225,7 +224,7 @@ The Callback object provides two methods you can use to get return information a
 						System.out.println("New State detected for container: " + container.getContainerId() + " " + newState);
 						setState(newState);
 						if (newState == State.RUNNING) {
-								RunadockTest.this.runadock.terminateContainer(container.getId());
+							RunadockTest.this.runadock.terminateContainer(container.getId());
 						}
 					}
 		
@@ -322,3 +321,10 @@ The Container object provides get() methods for the properties of a started cont
 
 curl
 ----
+
+Last but not least the curl description.
+
+start a container:
+set following variables
+API_USER="<your username of runadock>"
+API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
