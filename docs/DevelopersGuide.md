@@ -38,7 +38,7 @@ Now you are ready to start a container with the following command:
 
 Example:
 
-    $ ./runadock run --source nginx
+    $ ./runadock run --source https://github.com/runadock/dockerfiles/tree/master/itworks
     $ created: 7e08492e-5db9-489d-9652-90f133df8bea
 
 The return value is the id of your run created by RunADock. There are the following optional parameter available for the run command:
@@ -154,7 +154,7 @@ There are the following command options available for the ps command:
 Java
 ----
 
-To manage containers using Java you first have to get the sources from our github project https://github.com/runadock/runadock-java. Integrate the runadock-java into your Java project.
+To manage containers using Java you first have to get the sources from our github project https://github.com/runadock/runadock-java. Integrate the runadock-java project into your Java project.
 
 ### Start a container
 
@@ -170,40 +170,81 @@ To manage containers using Java you first have to get the sources from our githu
         CreateContainerRequest request = new CreateContainerRequest();
         request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
         Container response = runadock.createContainer(request);
-        System.out.println("created container: " + response.toString());
+        System.out.println("created container: " + response.getId());
       }
     }
 
-The Container object provides a toString() method listing all properties of the started container:
+There is a further createContainer() method where additionally a Callback object as parameter can be provided:
 
-    Container [id=d9e39317-aba8-4799-9abd-12a9be4e7242,
-    containerId=null,
+    createContainer(final CreateContainerRequest containerToCreate, Callback callback)
+
+The Callback object provides two methods you can use to get return information about your running container. Here is an implementation example for the Callback object:
+
+    CreateContainerRequest containerToCreate = new CreateContainerRequest();
+    containerToCreate.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
+    Callback callback = new Callback() {
+      @Override
+      public void success(final Container container, final State newState) {
+        System.out.println("New State detected for container: " + container.getContainerId() + " " + newState);
+        setState(newState);
+        if (newState == State.RUNNING) {
+          RunadockTest.this.runadock.terminateContainer(container.getId());
+        }
+      }
+      @Override
+      public void failure(final RunadockError error) {
+        System.out.println("Error:" + error.getMessage());
+      }
+    };
+    this.runadock.createContainer(containerToCreate, callback);
+
+
+### Terminate
+
+To terminate a container you have to call the following method:
+
+    runadock.terminateContainer("<the containerID of the container to terminate>");
+
+### List all containers
+
+With the method
+
+    describeContainers(final Boolean all);
+
+you can get a list all containers. If the boolean is set to true, then all containers, the running containers as well as the terminated containers will be load into the list. The method returns a java.util.List with the Container objects.
+
+The Container object provides get() methods for the properties of a started container. In the following is a list of the available properties:
+
+    Container [
+    id=d9e39317-aba8-4799-9abd-12a9be4e7242,
+    containerId=2a19bef262216c43f1b7bb7c6a7f0203bc92f375755506d2b7cdbec1ac1bf67f,
     name=null,
-    publicDns=null,
-    ip=null,
+    publicDns=2a19bef262.c.runadock.io,
+    ip=37.187.250.7,
     source=https://github.com/runadock/dockerfiles/tree/master/itworks,
-    state=ORDERED,
+    state=RUNNING,
     cpuShares=128,
     memory=512,
     diskSize=5,
     ordered=1423221190270,
-    created=null,
+    created=1423221192259,
     terminated=null,
-    orderedBy=runadock-guest1,
+    orderedBy=username,
     plan=Starter,
-    owner=com.runadock.Container$Person@63643de1,
-    ports=[],
+    owner=com.runadock.Container$Person@3c22ed04,
+    ports=[com.runadock.Container$Port@18f6c074, com.runadock.Container$Port@6fd50c79],
     env=[],
     cmd=[],
     pricePerMinute=EUR 1.15E-4,
     pricePerOrder=EUR 0.05,
-    cost=null,
-    buildLog=]
-
-### Get the description of a container
-
-To terminate a container you have to call the following method:
-    runadock.terminateContainer("<the containerID of the container to terminate>");
+    cost=EUR 0.002875,
+    buildLog=Step 0 : FROM nginx
+      ---> e46b3488b010
+      Step 1 : COPY src /usr/share/nginx/html
+      ---> Using cache
+      ---> 7615793e4928
+      Successfully built 7615793e4928
+    ]
 
 curl
 ----
