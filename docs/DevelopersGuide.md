@@ -180,23 +180,88 @@ There is a further createContainer() method where additionally a Callback object
 
 The Callback object provides two methods you can use to get return information about your running container. Here is an implementation example for the Callback object:
 
-    CreateContainerRequest containerToCreate = new CreateContainerRequest();
-    containerToCreate.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
-    Callback callback = new Callback() {
-      @Override
-      public void success(final Container container, final State newState) {
-        System.out.println("New State detected for container: " + container.getContainerId() + " " + newState);
-        setState(newState);
-        if (newState == State.RUNNING) {
-          RunadockTest.this.runadock.terminateContainer(container.getId());
-        }
-      }
-      @Override
-      public void failure(final RunadockError error) {
-        System.out.println("Error:" + error.getMessage());
-      }
-    };
-    this.runadock.createContainer(containerToCreate, callback);
+    @Test
+    public class RunadockTest {
+      Runadock runadock;
+      private State state;
+		
+			@BeforeTest
+			public void setUp() {
+				this.runadock = RunadockFactory.connect(
+				    "<your username of RunADock>", 
+            "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+			}
+		
+			@Test(enabled = false)
+			public void createContainer() {
+				CreateContainerRequest containerToCreate = new CreateContainerRequest();
+				containerToCreate.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
+				Container response = this.runadock.createContainer(containerToCreate);
+				System.out.println("Created Container: " + response);
+			}
+		
+			void setState(final State newState) {
+				this.state = newState;
+			}
+		
+			@Test
+			public void createContainerWithCallBack() throws InterruptedException {
+				CreateContainerRequest containerToCreate = new CreateContainerRequest();
+				containerToCreate.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
+				Callback callback = new Callback() {
+		
+					@Override
+					public void success(final Container container, final State newState) {
+						System.out.println("New State detected for container: " + container.getContainerId() + " " + newState);
+						setState(newState);
+						if (newState == State.RUNNING) {
+							RunadockTest.this.runadock.terminateContainer(container.getId());
+						}
+					}
+		
+					@Override
+					public void failure(final RunadockError error) {
+						System.out.println("Error:" + error.getMessage());
+					}
+				};
+				this.runadock.createContainer(containerToCreate, callback);
+		
+				while (this.state != State.TERMINATED) {
+					Thread.sleep(100l);
+				}
+			}
+		
+			@Test
+			public void describeContainer() {
+				try {
+					Container container = this.runadock.describeContainer("unknownContainer");
+					Assert.fail("The expectation that describe of an unknown container gives 404 failed. ");
+				} catch (RetrofitError e) {
+					// Expected.
+				}
+		
+			}
+		
+			@Test(enabled = false)
+			public void describeContainers() {
+				List<Container> containers = this.runadock.describeContainers(false);
+				for (Container container : containers) {
+					System.out.println(container.getContainerId() + " from source: " + container.getSource() + " costs: "
+							+ container.getCost());
+				}
+				System.out.println("----------------------- ALL Containers ------------------------------------");
+				List<Container> allContainers = this.runadock.describeContainers(true);
+				for (Container container : allContainers) {
+					System.out.println(container.getContainerId() + " from source: " + container.getSource() + " costs: "
+							+ container.getCost());
+				}
+		
+			}
+		
+			@Test
+			public void terminateContainer() {
+			}
+		}
 
 
 ### Terminate
@@ -211,7 +276,7 @@ With the method
 
     describeContainers(final Boolean all);
 
-you can get a list all containers. If the boolean is set to true, then all containers, the running containers as well as the terminated containers will be load into the list. The method returns a java.util.List with the Container objects.
+you can get a list of all containers. If the boolean is set to true, then all containers, the running containers as well as the terminated containers will be load into the list. The method returns a java.util.List with the Container objects.
 
 The Container object provides get() methods for the properties of a started container. In the following is a list of the available properties:
 
