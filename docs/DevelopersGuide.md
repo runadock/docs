@@ -377,17 +377,17 @@ There are the following optional parameter available for the container start:
     "name":"<arbitrary name of the container>"
     "size":"<size of the container with the possible arguments XS (default), S, M, L>"
 
-#### Terminate a container
-
-To delete a container you can use the following cURL command:
-
-		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container to be deleted>
-
 #### Description of a specific container
 
 In case you need the information for one specific container, just append the ID of the container to the URL:
 
 		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container>
+
+#### Terminate a container
+
+To delete a container you can use the following cURL command:
+
+		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container to be deleted>
 
 #### Description of all containers
 
