@@ -31,7 +31,7 @@ and
 
     RUNADOCK_TOKEN=<your authorization key can be found at https://runadock.io/terminal/#/tokens>
 
-#### run
+#### Start a container
 
 Now you are ready to start a container with the following command:
 
@@ -47,7 +47,7 @@ The return value is the id of your run created by runadock. There are the follow
     --name      arbitrary name of the container
     --size      size of the container with the possible arguments XS (default), S, M, L
 
-#### inspect
+#### Description of a specific container
 
 You can use the id to check for more details on your container using the command inspect
 
@@ -122,7 +122,7 @@ Example:
 
 As you can see there are two id parameter. The first parameter *id* is the runadock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
-#### kill
+#### Terminate a container
 
 For stopping a container you can use the kill command:
 
@@ -133,7 +133,7 @@ Example:
     $ ./runadock kill --id 9d608bc6-e066-4686-ae98-b3e6ef3114fd
     $
 
-#### ps
+#### List of containers
 
 Last but not least we also provide a command to list all your running and stopped containers. Use
 
@@ -270,7 +270,7 @@ The Callback object provides two methods you can use to get return information a
 		}
 
 
-#### Terminate
+#### Terminate a container
 
 To terminate a container you have to call the following method:
 
@@ -377,11 +377,17 @@ There are the following optional parameter available for the container start:
     "name":"<arbitrary name of the container>"
     "size":"<size of the container with the possible arguments XS (default), S, M, L>"
 
-#### Delete a container
+#### Terminate a container
 
 To delete a container you can use the following cURL command:
 
 		curl -X DELETE -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container to be deleted>
+
+#### Description of a specific container
+
+In case you need the information for one specific container, just append the ID of the container to the URL:
+
+		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container>
 
 #### Description of all containers
 
@@ -391,8 +397,3 @@ To list all containers including the terminated containers use the following cUR
 
 The parameter "all" is set to false per default. Calling the cURL command without the "all"-parameter you will get the running container only.
 
-#### Description of a specific container
-
-In case you need the information for one specific container, just append the ID of the container to the URL:
-
-		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container/<ID of the container>
