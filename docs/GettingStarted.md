@@ -9,7 +9,7 @@ Note: We provide our service to open source developers and administrators. So ap
 Example: The little web server
 ------------------------------
 
-In our example we will run a small web server including a web site. The web server is based on NGINX. The docker file can be viewed in <https://github.com/dockerfile/nginx>
+In our example we will run a small web server including a web site. The web server is based on NGINX. The docker file can be viewed in <https://github.com/runadock/dockerfiles/tree/master/itworks>
 
 There you will find the docker file with the description of the container build.
 
@@ -18,14 +18,14 @@ Now start with the following steps:
 1. Open RunADock: <https://runadock.io>
 2. Log in with the following credentials:
 
-    * user name: runadock-guest1
+    * user name: your user name of your github account
     * password: use the password you have received via email
 
 3. After successful log-in you will be guided to our Welcome site. Please check that you have already accepted our terms.
 4. Now you can start our RunADock terminal. Open the Containers site using the button "Create a container".
 5. To start a container you have to fill out the form:
 
-    * source: https://github.com/dockerfile/nginx
+    * source: https://github.com/runadock/dockerfiles/tree/master/itworks
     * name: myfirstcontainer
     * now click the button Create
 
@@ -36,12 +36,12 @@ Now start with the following steps:
 
    Please consider: for our example you have to use the entry for port 80.
 
-If you have copied correctly you can see the site "Welcome to nginx on Debian!".
+If you have copied correctly you can see the our Dockeye to welcome you.
 
-out of charge
+Out of charge
 -------------
 
 In case your quota is exhausted you can order new contingents on our Billing page. Just open the site using the menu item. At Billing site you can choose between 5, 10, 25, or 50 Euro. After clicking on "Charge" the Novalnet application will be started. Please follow the provided process.
 
-Usually you will get a confirmation about your successful charge. Further you can see your actual balance at the Billing site.
+Usually you will get an email confirmation about your successful charge. Further you can see your actual balance at the Billing site.
 
