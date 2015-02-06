@@ -395,5 +395,5 @@ To list all containers including the terminated containers use the following cUR
 
 		curl -X GET -H "X-Authorization: ${API_USER}:${API_TOKEN}" -H "Content-Type: application/json" https://runadock.io/api/v1/container?all=true
 
-The parameter "all" is set to false per default. Calling the cURL command without the "all"-parameter you will get the running container only.
+The parameter "all" is set to false per default. Calling the cURL command without the "all"-parameter you will get the running containers only.
 
