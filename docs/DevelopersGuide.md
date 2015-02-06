@@ -160,14 +160,12 @@ To manage containers using Java you first have to get the sources from our githu
 
 The following example shows you how to start a container:
 
-    import com.runadock.*;
-    
-    public class Example {
-    
+		import com.runadock.*;
+		public class Example {
       public static void main(final String[] args) {
         Runadock runadock = RunadockFactory.connect(
-              "<your username of RunADock>",
-              "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+          "<your username of RunADock>",
+          "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
 
         CreateContainerRequest request = new CreateContainerRequest();
         request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
@@ -217,7 +215,7 @@ The Callback object provides two methods you can use to get return information a
 						System.out.println("New State detected for container: " + container.getContainerId() + " " + newState);
 						setState(newState);
 						if (newState == State.RUNNING) {
-							RunadockTest.this.runadock.terminateContainer(container.getId());
+								RunadockTest.this.runadock.terminateContainer(container.getId());
 						}
 					}
 		
@@ -251,13 +249,12 @@ The Callback object provides two methods you can use to get return information a
 					System.out.println(container.getContainerId() + " from source: " + container.getSource() + " costs: "
 							+ container.getCost());
 				}
-				System.out.println("----------------------- ALL Containers ------------------------------------");
+				System.out.println("-----------------ALL Containers--------------");
 				List<Container> allContainers = this.runadock.describeContainers(true);
 				for (Container container : allContainers) {
 					System.out.println(container.getContainerId() + " from source: " + container.getSource() + " costs: "
 							+ container.getCost());
 				}
-		
 			}
 		
 			@Test
