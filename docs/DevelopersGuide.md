@@ -170,9 +170,40 @@ To manage containers using Java you first have to get the sources from our githu
         CreateContainerRequest request = new CreateContainerRequest();
         request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
         Container response = runadock.createContainer(request);
-        System.out.println("created container: " + response.getId());
+        System.out.println("created container: " + response.toString());
       }
     }
+
+The Container object provides a toString() method listing all properties of the started container:
+
+    Container [id=d9e39317-aba8-4799-9abd-12a9be4e7242,
+    containerId=null,
+    name=null,
+    publicDns=null,
+    ip=null,
+    source=https://github.com/runadock/dockerfiles/tree/master/itworks,
+    state=ORDERED,
+    cpuShares=128,
+    memory=512,
+    diskSize=5,
+    ordered=1423221190270,
+    created=null,
+    terminated=null,
+    orderedBy=runadock-guest1,
+    plan=Starter,
+    owner=com.runadock.Container$Person@63643de1,
+    ports=[],
+    env=[],
+    cmd=[],
+    pricePerMinute=EUR 1.15E-4,
+    pricePerOrder=EUR 0.05,
+    cost=null,
+    buildLog=]
+
+### Get the description of a container
+
+To terminate a container you have to call the following method:
+    runadock.terminateContainer("<the containerID of the container to terminate>");
 
 curl
 ----
