@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-RunADock can be used to start and run docker containers. In the following you will find an example on how to use our RunADock terminal.
+runadock can be used to start and run docker containers. In the following you will find an example on how to use our runadock terminal.
 If you are interessted in Docker itself, please visit <https://www.docker.com>
 
 Note: We provide our service to open source developers and administrators. So appropriate technical knowledge is required to use it.
@@ -15,14 +15,14 @@ There you will find the docker file with the description of the container build.
 
 Now start with the following steps:
 
-1. Open RunADock: <https://runadock.io>
+1. Open runadock: <https://runadock.io>
 2. Log in with the following credentials:
 
     * user name: your user name of your github account
     * password: use the password you have received via email
 
 3. After successful log-in you will be guided to our Welcome site. Please check that you have already accepted our terms.
-4. Now you can start our RunADock terminal. Open the Containers site using the button "Create a container".
+4. Now you can start our runadock terminal. Open the Containers site using the button "Create a container".
 5. To start a container you have to fill out the form:
 
     * source: https://github.com/runadock/dockerfiles/tree/master/itworks
