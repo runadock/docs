@@ -1,10 +1,10 @@
 Introduction
 ============
 
-About RunADock
+About runadock
 --------------
 
-RunADock is implemented as a PaaS for Developers to run and test applications in an easy way. We strongly focus on
+runadock is implemented as a PaaS for Developers to run and test applications in an easy way. We strongly focus on
 * performance and 
 * usability.
 
@@ -27,4 +27,4 @@ Features
 | L            | 1028 shares | 4096 MB |
 
 * different plans: shared IPv4 addresses and dedicated IPv4 addresses
-* disk space: 2 GB for all sizes
+* disk space: 5 GB for all sizes
