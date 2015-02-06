@@ -28,4 +28,3 @@ Features
 
 * different plans: shared IPv4 addresses and dedicated IPv4 addresses
 * disk space: 2 GB for all sizes
-* 120 minutes free each month
