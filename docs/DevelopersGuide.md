@@ -11,8 +11,8 @@ Authorization key
 
 You need an authorization key to run docker containers using our RunADock interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
 
-Using CLI
----------
+CLI
+---
 
 We provide you a CLI for using our RunADock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
 
@@ -153,6 +153,26 @@ There are the following command options available for the ps command:
 
 Java
 ----
+
+To manage containers using Java you first have to get the sources from our github project https://github.com/runadock/runadock-java. Integrate the runadock-java into your Java project.
+
+### Start a container
+
+    import com.runadock.*;
+    
+    public class Example {
+    
+      public static void main(final String[] args) {
+        Runadock runadock = RunadockFactory.connect(
+              "<your username of RunADock>",
+              "<your authorization key can be found at https://dev.runadock.io/terminal/#/tokens>");
+
+        CreateContainerRequest request = new CreateContainerRequest();
+        request.setSource("https://github.com/runadock/dockerfiles/tree/master/itworks");
+        Container response = runadock.createContainer(request);
+        System.out.println("created container: " + response.getId());
+      }
+    }
 
 curl
 ----
