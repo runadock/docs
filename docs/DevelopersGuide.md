@@ -158,6 +158,8 @@ To manage containers using Java you first have to get the sources from our githu
 
 ### Start a container
 
+The following example shows you how to start a container:
+
     import com.runadock.*;
     
     public class Example {
