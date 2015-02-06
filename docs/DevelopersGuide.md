@@ -4,7 +4,7 @@ Developers Guide
 Sign in
 -------
 
-To sign in into runadock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock and we will create your runadock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service including the 120 minutes free of charge.
+To sign in into runadock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock and we will create your runadock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service.
 
 Authorization key
 -----------------
