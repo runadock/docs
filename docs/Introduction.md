@@ -19,7 +19,7 @@ Features
 * REST API
 * different sizes:
 
-<table>
+<table border="1">
   <tr>
     <th>Name</th><th>CPU</th><th>RAM</th>
   </tr>
@@ -36,6 +36,7 @@ Features
     <td>L</td><td>1028 shares</td><td>4096 MB</td>
   </tr>
 </table>
+
 
 * different plans: shared IPv4 addresses and dedicated IPv4 addresses
 * disk space: 5 GB for all sizes
