@@ -19,12 +19,23 @@ Features
 * REST API
 * different sizes:
 
-| Name         | CPU         | RAM     |
-| -------      | --------    | ------- |
-| XS (default) | 128 shares  | 512 MB  |
-| S            | 256 shares  | 1024 MB |
-| M            | 512 shares  | 2048 MB |
-| L            | 1028 shares | 4096 MB |
+<table>
+  <tr>
+    <th>Name</th><th>CPU</th><th>RAM</th>
+  </tr>
+  <tr>
+    <td>XS (default)</td><td>128 shares</td><td>512 MB</td>
+  </tr>
+  <tr>
+    <td>S</td><td>256 shares</td><td>1024 MB</td>
+  </tr>
+  <tr>
+    <td>M</td><td>512 shares</td><td>2048 MB</td>
+  </tr>
+  <tr>
+    <td>L</td><td>1028 shares</td><td>4096 MB</td>
+  </tr>
+</table>
 
 * different plans: shared IPv4 addresses and dedicated IPv4 addresses
 * disk space: 5 GB for all sizes
