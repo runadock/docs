@@ -72,23 +72,6 @@ Example:
       "terminated": 0,
       "orderedBy": "username",
       "plan": "Starter",
-      "owner": {
-        "id": "b88de4f9-25e8-491e-a8c9-d62f478300b9",
-        "firstName": "Firstname",
-        "lastName": "Lastname",
-        "street": "am Bay",
-        "zip": "65712",
-        "city": "Taindorf",
-        "country": "Deutschland",
-        "houseNumber": "1",
-        "username": "username",
-        "email": "username@yahoo.com",
-        "verifyToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJydW5hZG9jay1ndWVzdDEiLCJpYXQiOjE0MTg3MzQwODIzMDZ9.oIrjTVoAcku5dchayL7WN7tZxB2gO1uFE2iWVRawtyM=",
-        "countryCode": "DE",
-        "receiveEmail": true,
-        "admin": false,
-        "emailVerified": false
-      },
       "ports": [
         {
           "id": "8ab86c18-af85-412c-8206-b9463844b927",
