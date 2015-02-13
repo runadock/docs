@@ -1,4 +1,4 @@
-RunADock Documentation
+runadock.io Documentation
 ========
 
 Documentation of runadock.io with the following contents:
