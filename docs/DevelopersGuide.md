@@ -19,17 +19,17 @@ We provide you a CLI for using our runadock.io. You can find a CLI for Windows, 
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
   - copy the CLI from our GitHub project using the git clone command with the address https://github.com/runadock/runadock-cli
 
-After the download prepare your environment by setting the following environment variables:
+Before starting your containers prepare your environment by setting the following environment variables:
 
-    RUNADOCK_USER=<your username of runadock.io>
+    export RUNADOCK_USER=<your username of runadock.io>
 
 and
 
-    RUNADOCK_TOKEN=<your authorization key can be found at https://runadock.io/terminal/#/tokens>
+    export RUNADOCK_TOKEN=<your authorization key can be found at https://runadock.io/terminal/#/tokens>
 
 #### Start a container
 
-Now you are ready to start a container with the following command:
+Now you are ready to start a container. Change to the directory, where you have saved the CLI tool and start your container with the following command:
 
     $ ./runadock run --source <source to the container>
 
