@@ -4,12 +4,12 @@ Developers Guide
 Sign in
 -------
 
-To sign in into runadock you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock and we will create your runadock account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service.
+To sign in into runadock.io you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock.io is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock.io and we will create your runadock.io account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service.
 
 Authorization key
 -----------------
 
-You need an authorization key to run docker containers using our runadock interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
+You need an authorization key to run docker containers using our runadock.io interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
 
 CLI
 ---
@@ -17,15 +17,11 @@ CLI
 We provide you a CLI for using our runadock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
 
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
-  - copy the CLI from our github project using the git clone command with the address https://github.com/runadock/runadock-cli
+  - copy the CLI from our GitHub project using the git clone command with the address https://github.com/runadock/runadock-cli
 
-To use the CLI you have to build the application first. Go into the directory where you have unzipped the CLI source and start the build with the command
+After the download prepare your environment by setting the following environment variables:
 
-    $ ./build
-
-Next you have to set the environment variables 
-
-    RUNADOCK_USER=<your username of runadock>
+    RUNADOCK_USER=<your username of runadock.io>
 
 and
 
@@ -42,7 +38,7 @@ Example:
     $ ./runadock run --source https://github.com/runadock/dockerfiles/tree/master/itworks
     $ created: 7e08492e-5db9-489d-9652-90f133df8bea
 
-The return value is the id of your run created by runadock. There are the following optional parameter available for the run command:
+The return value is the id of your run created by runadock.io. There are the following optional parameter available for the run command:
 
     --name      arbitrary name of the container
     --size      size of the container with the possible arguments XS (default), S, M, L
@@ -137,7 +133,7 @@ There are the following command options available for the ps command:
 Java
 ----
 
-To manage containers using Java you first have to get the sources from our github project https://github.com/runadock/runadock-java. Integrate the runadock-java project into your Java project.
+To manage containers using Java you first have to get the sources from our GitHub project https://github.com/runadock/runadock-java. Integrate the runadock-java project into your Java project.
 
 #### Start a container
 
@@ -147,7 +143,7 @@ The following example shows you how to start a container:
 		public class Example {
 			public static void main(final String[] args) {
 				Runadock runadock = RunadockFactory.connect(
-					"<your username of runadock>",
+					"<your username of runadock.io>",
 					"<your authorization key can be found at https://runadock.io/terminal/#/tokens>");
 
         CreateContainerRequest request = new CreateContainerRequest();
@@ -178,7 +174,7 @@ The Callback object provides two methods you can use to get return information a
 			@BeforeTest
 			public void setUp() {
 				this.runadock = RunadockFactory.connect(
-				    "<your username of runadock>", 
+				    "<your username of runadock.io>", 
             "<your authorization key can be found at https://runadock.io/terminal/#/tokens>");
 			}
 		
@@ -305,7 +301,7 @@ cURL
 
 Last but not least the cURL description. 
 
-		API_USER="<your username of runadock>"
+		API_USER="<your username of runadock.io>"
 		API_TOKEN="<your authorization key can be found at https://runadock.io/terminal/#/tokens>"
 
 #### Start a container
@@ -329,24 +325,6 @@ The answer of the POST request contains the complete description of a container,
 		"terminated":null,
 		"orderedBy":"username",
 		"plan":"Starter",
-		"owner":
-			{"id":"b88de4f9-25e8-491e-a8c9-d62f478300b9",
-			"firstName":"Firstname",
-			"lastName":"Lastname",
-			"street":"am Bay",
-			"zip":"65712",
-			"city":"Taindorf",
-			"country":"Deutschland",
-			"houseNumber":"1",
-			"username":"username",
-			"email":"username@yahoo.com",
-			"verifyToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJydW5hZG9jay1ndWVzdDEiLCJpYXQiOjE0MTg3MzQwODIzMDZ9.oIrjTVoAcku5dchayL7WN7tZxB2gO1uFE2iWVRawtyM=",
-			"countryCode":"DE",
-			"receiveEmail":true,
-			"creditCardVerified":true,
-			"termsAccepted":true,
-			"admin":false,
-			"emailVerified":false},
 		"ports":[],
 		"env":[],
 		"cmd":[],
