@@ -22,7 +22,7 @@ Now start with the following steps:
     * password: use the password you have received via email
 
 3. After successful log-in you will be guided to our Welcome site. Please check that you have already accepted our terms.
-4. Now you can start our runadock terminal. Open the Containers site using the button "Create a container".
+4. Now you can start our runadock.io terminal. Open the Containers site using the button "Create a container".
 5. To start a container you have to fill out the form:
 
     * source: https://github.com/runadock/dockerfiles/tree/master/itworks
