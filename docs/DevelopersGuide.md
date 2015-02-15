@@ -14,7 +14,7 @@ You need an authorization key to run docker containers using our runadock.io int
 CLI
 ---
 
-We provide you a CLI for using our runadock. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
+We provide you a CLI for using our runadock.io. You can find a CLI for Windows, Mac/OS, and Linux. There are two possibilities to get the CLI:
 
   - download and unzip the CLI of your need from our mainpage <https://runadock.io>
   - copy the CLI from our GitHub project using the git clone command with the address https://github.com/runadock/runadock-cli
@@ -99,7 +99,7 @@ Example:
       "buildLog": ""
     }
 
-As you can see there are two id parameter. The first parameter *id* is the runadock-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
+As you can see there are two id parameter. The first parameter *id* is the runadock.io-ID of your run. The parameter *containerId* is the ContainerID of your container running by Docker.
 
 #### Terminate a container
 
