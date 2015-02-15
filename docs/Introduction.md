@@ -1,8 +1,8 @@
 Introduction
 ============
 
-About runadock
---------------
+About runadock.io
+-----------------
 
 runadock is implemented as a PaaS for Developers to run and test applications in an easy way. We strongly focus on
 * performance and 
