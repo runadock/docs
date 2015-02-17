@@ -14,9 +14,8 @@ For more information about Docker look at https://www.docker.com/whatisdocker/
 Features
 --------
 
-* dedicated IPv4 address
 * use of GitHub repository to start a container and to run application
-* cli (command line interface)
+* CLI (command line interface)
 * REST API
 * different sizes:
 
