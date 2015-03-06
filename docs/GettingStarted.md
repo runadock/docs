@@ -38,10 +38,10 @@ Now start with the following steps:
 
 If you have copied correctly you can see the our Dockeye to welcome you.
 
-Out of charge
+Billing
 -------------
 
-In case your quota is exhausted you can order new contingents on our Billing page. Just open the site using the menu item. At Billing site you can choose between 5, 10, 25, or 50 Euro. After clicking on "Charge" the Novalnet application will be started. Please follow the provided process.
+To keep your containers up and running you have to ensure that the amount on your balance has the appropriate value. You can charge any time at our Billing page. You can choose between 5, 10, 25, or 50 Euro. After clicking on "Charge" a charging page will show up. Please follow the provided process.
 
-Usually you will get an email confirmation about your successful charge. Further you can see your actual balance at the Billing site.
+Usually you will get an email confirmation about your successful charge. Further you can see your actual balance at the Billing page.
 
