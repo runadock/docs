@@ -22,6 +22,7 @@ The Containers page gives you the possibility to start and stop docker container
 - Command: is optional and can be used in case of a command is needed to run your docker container
 - Environment: also optional for a comma separated list of environment variables to set up the environment of your container
 - Name: in case you will run some containers at a time the Name value will give you an easy possibility to differentiate your docker containers.
+- Size: choose the size for your container. Information about the available sizes can be found here: https://github.com/runadock/docs/blob/master/docs/Introduction.md#features
 
 Tokens
 
