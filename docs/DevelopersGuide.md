@@ -1,15 +1,39 @@
 Developers Guide
 ================
 
+Overview
+--------
+
+runadock.io provides different possiblities to start and run docker containers. The web application provides a        comfortable way for a quick start. Further there is a REST-API which can be accessed via CLI, cURL and Java.
+
 Sign in
 -------
 
-To sign in into runadock.io you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock.io is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock.io and we will create your runadock.io account and send you an email with a confirmation link. After clicking the confirmation link we will ask you for your credit card information. Only with this information we are able to provide you the full service.
+To sign in into runadock.io you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock.io is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock.io and we will create your runadock.io account. First of all you have to accept our terms and second we will ask you for your credit card information. Only with this information we are able to provide you the full service.
 
-Authorization key
------------------
+Description of web application
+------------------------------
 
-You need an authorization key to run docker containers using our runadock.io interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token page you can create additional tokens, and also delete tokens.
+Containers
+
+The Containers page gives you the possibility to start and stop docker containers.
+
+- Source: type the GitHub URL or the Docker Hub image name of your project
+- Command: is optional and can be used in case of a command is needed to run your docker container
+- Environment: also optional for a comma separated list of environment variables to set up the environment of your container
+- Name: in case you will run some containers at a time the Name value will give you an easy possibility to differentiate your docker containers.
+
+Tokens
+
+You need an authorization key to run docker containers using our runadock.io REST-API. On the Tokens page you can find your authorization key. There you can create additional tokens, and also delete tokens.
+
+Billing
+
+The Billing page provides you an overview about your actual balance, your charges and your orders. At Billing page it is also possible to charge for more starts and runs of your docker containers.
+
+Settings
+
+At the Settings page you can provide and change your personal information.
 
 CLI
 ---
