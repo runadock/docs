@@ -16,13 +16,18 @@ Description of web application
 
 Containers
 
-The Containers page gives you the possibility to start and stop docker containers.
+The Containers page gives you the possibility to start and stop docker containers, as well as an overview about your running containers.
 
-- Source: type the GitHub URL or the Docker Hub image name of your project
-- Command: is optional and can be used in case of a command is needed to run your docker container
-- Environment: also optional for a comma separated list of environment variables to set up the environment of your container
+- Source: type the GitHub URL or the Docker Hub image name of your project.
+- Command: is optional and can be used in case of a command is needed to run your docker container.
+- Environment: also optional for a comma separated list of environment variables to set up the environment of your container.
 - Name: in case you will run some containers at a time the Name value will give you an easy possibility to differentiate your docker containers.
-- Size: choose the size for your container. Information about the available sizes can be found here: https://github.com/runadock/docs/blob/master/docs/Introduction.md#features
+- Size: choose the size for your container. Information about the available sizes can be found at https://github.com/runadock/docs/blob/master/docs/Introduction.md#features
+- Plan: use the Dedicated button to get a dedicated IPv4 address for your container.
+
+Depending on your selection of size and plan you will get immediatly the information about the costs of the container below the Create and Cancel buttons.
+
+If you have started the container it shows up in the list of already running containers. With the information button you can view the details of the container. The Trash button can be used to stop the container.
 
 Tokens
 
