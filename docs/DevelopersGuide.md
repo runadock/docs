@@ -9,7 +9,7 @@ To sign in into runadock.io you have to use your username or email address of yo
 Authorization key
 -----------------
 
-You need an authorization key to run docker containers using our runadock.io interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token site you can create additional tokens, and also delete tokens.
+You need an authorization key to run docker containers using our runadock.io interfaces. You can find your authorization key after successful sign up within the Token menu. At the Token page you can create additional tokens, and also delete tokens.
 
 CLI
 ---
