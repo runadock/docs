@@ -9,35 +9,35 @@ runadock.io provides different possiblities to start and run docker containers. 
 Sign in
 -------
 
-To sign in into runadock.io you have to use your username or email address of your GitHub account. With this information we will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock.io is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock.io and we will create your runadock.io account. First of all you have to accept our terms and second we will ask you for your credit card information. Only with this information we are able to provide you the full service.
+To sign in into runadock.io you have to use your username or email address of your GitHub account. This information will direct you to the GitHub login using the OAuth2 functionality. With the login to GitHub you give the permission that runadock.io is allowed to use your GitHub account information. After your confirmation you will be redirected back to runadock.io and we will create your runadock.io account. First of all you have to accept our terms and second we will ask you for your credit card information. We need this information to be able to provide you the full service.
 
 Description of web application
 ------------------------------
 
-Containers
+#### Containers
 
 The Containers page gives you the possibility to start and stop docker containers, as well as an overview about your running containers.
 
-- Source: type the GitHub URL or the Docker Hub image name of your project.
-- Command: is optional and can be used in case of a command is needed to run your docker container.
-- Environment: also optional for a comma separated list of environment variables to set up the environment of your container.
-- Name: in case you will run some containers at a time the Name value will give you an easy possibility to differentiate your docker containers.
-- Size: choose the size for your container. Information about the available sizes can be found at https://github.com/runadock/docs/blob/master/docs/Introduction.md#features
-- Plan: use the Dedicated button to get a dedicated IPv4 address for your container.
+- Source: Type here the GitHub URL or the Docker Hub image name of your docker project.
+- Command: This field is optional and can be used in case of a command is needed to run your docker container.
+- Environment: The environment parameter is optional and provides the possibility of a comma separated list of environment variables to set up the environment of your container.
+- Name: In case you will run some containers at a time the Name value will give you an easy possibility to differentiate your docker containers.
+- Size: Use this option to choose the size for your container. Information about the available sizes can be found at https://github.com/runadock/docs/blob/master/docs/Introduction.md#features
+- Plan: Use the Dedicated button to get a dedicated IPv4 address for your container.
 
-Depending on your selection of size and plan you will get immediatly the information about the costs of the container below the Create and Cancel buttons.
+Depending on your selection of size and plan you will get immediatly the information about the costs of the container below the buttons Create and Cancel.
 
 If you have started the container it shows up in the list of already running containers. With the information button you can view the details of the container. The Trash button can be used to stop the container.
 
-Tokens
+#### Tokens
 
 You need an authorization key to run docker containers using our runadock.io REST-API. On the Tokens page you can find your authorization key. There you can create additional tokens, and also delete tokens.
 
-Billing
+#### Billing
 
 The Billing page provides you an overview about your actual balance, your charges and your orders. At Billing page it is also possible to charge for more starts and runs of your docker containers.
 
-Settings
+#### Settings
 
 At the Settings page you can provide and change your personal information.
 
